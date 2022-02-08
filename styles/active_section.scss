@@ -1,0 +1,57 @@
+.other-section.active {
+  .section__decoration {
+    .number-container {
+      p {
+        span {
+          transform: translateY(0);
+        }
+      }
+    }
+
+    &::before {
+      width: 35vw;
+    }
+    &::after {
+      height: 45vh;
+    }
+  }
+
+  .section-main-content-2 {
+    .section-image-content {
+      transform: translate(0, 0);
+      background-color: transparent;
+
+      &::before {
+        // transform: translateX(110%);
+        opacity: 0;
+      }
+
+      &::after {
+        transform: rotate(-20deg) translate(100vw, -50%);
+      }
+
+      img {
+        transform: translateX(0);
+      }
+      .visit-slider {
+        &:hover {
+          opacity: 1;
+          h3 {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    // .sub_text-content {
+    //   .sub-name-text {
+    //     h2 {
+    //     }
+
+    //     p {
+    //     }
+    //   }
+    // }
+  }
+}

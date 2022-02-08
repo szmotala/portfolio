@@ -1,0 +1,24 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 5%;
+  width: 90%;
+  margin: 0 auto;
+  height: 10vh;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h3 {
+    font-size: $font-size-md;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+  }
+
+  p {
+    font-size: $font-size-md;
+    font-weight: 500;
+    letter-spacing: 0.15rem;
+  }
+}

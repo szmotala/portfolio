@@ -1,0 +1,55 @@
+.main-cta-wrapper {
+  height: max-content;
+  width: max-content;
+  cursor: pointer;
+  position: relative;
+
+  button {
+    padding: $button-padding;
+    font-size: $font-size-md;
+    background: $main-bg;
+    font-weight: $medium;
+    border: $cta-button-border;
+    cursor: pointer;
+
+    transition: all 0.2s;
+  }
+
+  &::after,
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  &::before {
+    background-color: transparent;
+    transition: all 0.2s;
+  }
+
+  &::after {
+    background-color: transparent;
+    transition: all 0.2s;
+  }
+
+  &:hover {
+    button {
+      transform: translate(0.8rem, -0.8rem);
+      background-color: $font-color;
+      color: $main-bg;
+    }
+
+    &::before {
+      transform: translate(-0.8rem, 0.8rem);
+      background-color: $cta-btn-before;
+    }
+
+    &::after {
+      background-color: $cta-btn-after;
+    }
+  }
+}

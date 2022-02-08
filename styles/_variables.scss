@@ -1,0 +1,67 @@
+//Colors
+$main-bg: #000000;
+$font-color: #ffffff;
+$orange: #ff7a00;
+$dark-gray: #333333;
+$light-gray: #a4a4a4;
+
+$cta-btn-before: rgba(
+  $color: $light-gray,
+  $alpha: 0.4,
+);
+
+$cta-btn-after: rgba(
+  $color: $font-color,
+  $alpha: 0.4,
+);
+
+$colors: (
+  "primary-dark": $main-bg,
+  "secondary": $orange,
+  "primary": $font-color,
+  "dark-styled":
+    rgba(
+      $color: $dark-gray,
+      $alpha: 0.7,
+    ),
+);
+
+//Borders
+$cta-button-border: 1px solid $font-color;
+
+//Padding
+$section-padding: 0 5%;
+$div-padding: 0 10%;
+$button-padding: 1vh 2vw;
+
+//Margin
+$number-margin: 0 3vw 3vh 0;
+$secion-text-margin-left-right: 2rem;
+$secion-text-margin-bottom: 5vh;
+$section-heading-margin: 0 0 2vh 0;
+$hero-margin: 2vh;
+
+//Font sizes
+$base-font-size: 1rem;
+$font-size-slider: $base-font-size * 2.5;
+$font-size-logo-xxl: $base-font-size * 8.5;
+
+$font-size-sm: 0.8 * $base-font-size;
+$font-size-rg: $base-font-size;
+$font-size-md: 1.5 * $base-font-size;
+$font-size-lg: 2 * $base-font-size;
+$font-size-xl: 4 * $base-font-size;
+$font-size-xxl: 5.25 * $base-font-size;
+
+//Font weights
+$light: 300;
+$medium: 400;
+$bold: 500;
+$xbold: 600;
+
+//Sizes
+$decoration-height: 10rem;
+$single-decorator-height: 1.5rem;
+
+//Others
+$text-hover-effect: -5vh 5vh 0 $light-gray, 5vh -5vh 0 $dark-gray;
