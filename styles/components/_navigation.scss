@@ -30,8 +30,12 @@
         transition: all 0.5s ease;
 
         &.active {
-          width: 80px;
+          width: 40px;
           background-color: $orange;
+
+          @include md {
+            width: 80px;
+          }
         }
       }
     }
@@ -45,6 +49,10 @@
 }
 
 .right-navi {
+  display: none;
+  @include md {
+    display: flex;
+  }
   .nav-item {
     justify-content: right;
   }

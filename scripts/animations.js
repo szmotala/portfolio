@@ -13,8 +13,19 @@ function loadStartAnimation() {
 }
 
 function moveHead(duration, event) {
-  let x = event.pageX / 25;
-  let y = event.pageY / 25;
+  let x, y;
+
+  if (event.pageX !== 0) {
+    x = (event.pageX - window.innerWidth / 2) / 25;
+  } else {
+    x = 0;
+  }
+
+  if (event.pageY !== 0) {
+    y = (event.pageY - window.innerHeight / 2) / 25;
+  } else {
+    y = 0;
+  }
 
   $(".hero-section-image")
     .stop(false, true)
@@ -47,4 +58,30 @@ function moveText(text) {
     },
   });
   return element;
+}
+
+function animateSectionIntro(section) {
+  switch (section) {
+    case "#welcome":
+      setTimeout(function () {
+        $(section + " h1").css({
+          overflow: "visible",
+        });
+      }, 1000);
+      break;
+    default:
+      break;
+  }
+}
+
+function animateSectionOutro(section) {
+  switch (section) {
+    case "#welcome":
+      $(section + " h1").css({
+        overflow: "hidden",
+      });
+      break;
+    default:
+      break;
+  }
 }

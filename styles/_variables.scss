@@ -44,12 +44,15 @@ $hero-margin: 2vh;
 //Font sizes
 $base-font-size: 1rem;
 $font-size-slider: $base-font-size * 2.5;
+$font-size-logo-md: $base-font-size * 2;
+$font-size-logo-lg: $base-font-size * 4;
+$font-size-logo-xl: $base-font-size * 6;
 $font-size-logo-xxl: $base-font-size * 8.5;
 
 $font-size-sm: 0.8 * $base-font-size;
 $font-size-rg: $base-font-size;
 $font-size-md: 1.5 * $base-font-size;
-$font-size-lg: 2 * $base-font-size;
+$font-size-lg: 3 * $base-font-size;
 $font-size-xl: 4 * $base-font-size;
 $font-size-xxl: 5.25 * $base-font-size;
 

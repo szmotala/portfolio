@@ -1,16 +1,23 @@
+//scroll on touchscreen status
 let touchStartPosition;
 let touchScroll = false;
 
+//scroll keys
 let keys = [33, 34, 32, 38, 40];
 let upkeys = [33, 38];
 let downkeys = [34, 40];
 
+//scroll state
 let scrollPause = false;
 let currentPosition = 0;
 
+//array of available hashes filled in refreshHashArray method
 let hashes = [];
 
+//current index
 let index = 0;
+
+let lastHash, newHash;
 
 function fillHashArray() {
   $("section").each(function () {
@@ -22,6 +29,7 @@ function refreshIndex() {
   index = hashes.indexOf(window.location.hash.substring(1));
 }
 
+//All window methods
 function stateChangeDetector(scrollDelay) {
   $(window).on({
     wheel: function (event) {
@@ -79,6 +87,7 @@ function stateChangeDetector(scrollDelay) {
   });
 }
 
+//Scroll methods
 function scrollUp(delay) {
   scrollPause = true;
   if (index > 0) {
@@ -107,30 +116,41 @@ function scrollDown(delay) {
   }, delay);
 }
 
+//Method called with url hash change
 function changeHashResult() {
   $("html, body").scrollTop(currentPosition);
   refreshIndex();
   refreshWindowPostion();
 }
 
+//Set window scroll position
 function refreshWindowPostion() {
+  animateSectionOutro(lastHash);
+
   changeNavItemState();
+
+  newHash = window.location.hash;
   $("section").each(function () {
     $(this).removeClass("active");
   });
 
-  currentPosition = $(`#${hashes[index]}`).offset().top;
+  currentPosition = $(newHash).offset().top;
+
+  animateSectionIntro(newHash);
   $("html, body").animate(
     {
       scrollTop: currentPosition,
     },
     500,
     function () {
-      $(`#${hashes[index]}`).addClass("active");
+      $(newHash).addClass("active");
     }
   );
+  lastHash = newHash;
+  displayHeader();
 }
 
+//Set navbar element active according to current section displayed
 function changeNavItemState() {
   let j = 0;
   $(".right-navi .nav-item .item").each(function () {
@@ -145,4 +165,18 @@ function changeNavItemState() {
     if (j === index) $(this).addClass("active");
     j++;
   });
+}
+
+function displayHeader() {
+  if (lastHash !== "#welcome") {
+    $(".header").css({
+      transform: "translateY(0)",
+      opacity: 1,
+    });
+  } else {
+    $(".header").css({
+      transform: "translateY(-100%)",
+      opacity: 0,
+    });
+  }
 }

@@ -1,43 +1,53 @@
-.other-section.active .section__decoration .number-container p span {
+.other-section.active .section-wrapper .section__decoration .number-container p span {
   -webkit-transform: translateY(0);
           transform: translateY(0);
 }
 
-.other-section.active .section__decoration::before {
+.other-section.active .section-wrapper .section__decoration::before {
   width: 35vw;
 }
 
-.other-section.active .section__decoration::after {
+.other-section.active .section-wrapper .section__decoration::after {
   height: 45vh;
 }
 
-.other-section.active .section-main-content-2 .section-image-content {
+.other-section.active .section-wrapper .section-main-content-2 .section-image-content {
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
-  background-color: transparent;
 }
 
-.other-section.active .section-main-content-2 .section-image-content::before {
-  opacity: 0;
-}
-
-.other-section.active .section-main-content-2 .section-image-content::after {
-  -webkit-transform: rotate(-20deg) translate(100vw, -50%);
-          transform: rotate(-20deg) translate(100vw, -50%);
-}
-
-.other-section.active .section-main-content-2 .section-image-content img {
+.other-section.active .section-wrapper .section-main-content-2 .section-image-content img {
+  opacity: 1;
   -webkit-transform: translateX(0);
           transform: translateX(0);
 }
 
-.other-section.active .section-main-content-2 .section-image-content .visit-slider:hover {
+.other-section.active .section-wrapper .section-main-content-2 .section-image-content .visit-slider:hover {
   opacity: 1;
 }
 
-.other-section.active .section-main-content-2 .section-image-content .visit-slider:hover h3 {
+.other-section.active .section-wrapper .section-main-content-2 .section-image-content .visit-slider:hover::after {
+  -webkit-transform: rotate(-20deg) translate(100vw, -50%);
+          transform: rotate(-20deg) translate(100vw, -50%);
+}
+
+.other-section.active .section-wrapper .section-main-content-2 .section-image-content .visit-slider:hover h3 {
   -webkit-transform: translateY(0);
           transform: translateY(0);
   opacity: 1;
+}
+
+.hero.active .main-section-content .hero-section-image img {
+  opacity: 0.2;
+}
+
+.hero.active .main-section-content .section-text h1 span.my-name {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.hero.active .main-section-content .section-text p span {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 /*# sourceMappingURL=active_section.css.map */

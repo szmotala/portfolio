@@ -5,6 +5,7 @@ let canMove = false;
 
 $(window).ready(() => {
   loadStartAnimation();
+  if (window.location.hash === "") window.location.hash = "welcome";
 
   $(document).on({
     mousemove: (event) => {

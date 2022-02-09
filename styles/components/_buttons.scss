@@ -13,6 +13,27 @@
     cursor: pointer;
 
     transition: all 0.2s;
+    overflow: hidden;
+    position: relative;
+
+    @include sm {
+      font-size: $font-size-md;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 2vw;
+      height: 200vh;
+      background-color: #f3f3f3;
+      z-index: 5;
+      box-shadow: 0 0 0.4vw $font-color;
+      filter: blur(0.5vw);
+      opacity: 1;
+      top: -20vh;
+      transform: rotate(-20deg);
+      transition: all 0.7s;
+    }
   }
 
   &::after,
@@ -41,6 +62,10 @@
       transform: translate(0.8rem, -0.8rem);
       background-color: $font-color;
       color: $main-bg;
+
+      &::before {
+        transform: rotate(-20deg) translate(30vw);
+      }
     }
 
     &::before {

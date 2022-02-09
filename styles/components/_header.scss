@@ -1,24 +1,43 @@
 header {
   position: fixed;
-  top: 0;
-  left: 5%;
-  width: 90%;
+  top: 5%;
+  left: 0;
+  width: 100%;
   margin: 0 auto;
-  height: 10vh;
+  padding: $section-padding;
+  height: 5vh;
 
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 
-  h3 {
+  @include sm {
+    top: 0;
+    height: 10vh;
     font-size: $font-size-md;
-    font-weight: 500;
+    justify-content: space-between;
+  }
+
+  h3 {
+    font-size: $font-size-sm;
+    font-weight: $bold;
     letter-spacing: 0.1rem;
+
+    @include md {
+      font-size: $font-size-md;
+    }
   }
 
   p {
-    font-size: $font-size-md;
-    font-weight: 500;
+    display: none;
+    font-size: $font-size-sm;
+    font-weight: $bold;
     letter-spacing: 0.15rem;
+    @include sm {
+      display: block;
+    }
+    @include md {
+      font-size: $font-size-md;
+    }
   }
 }
