@@ -8,7 +8,7 @@ $(window).ready(() => {
   if (window.location.hash === "#welcome") loadStartAnimation();
   else $(".slide-in").css({ transform: "translateY(-100%)" });
 
-  $(document).on({
+  $("#welcome").on({
     mousemove: (event) => {
       if (canMove === true) {
         moveHead(100, event);

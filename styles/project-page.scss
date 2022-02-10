@@ -251,13 +251,30 @@ main {
     .development-container {
       .development-text-content {
         @include lg {
-          margin-left: 4vw;
+          text-align: center;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+
+          margin-top: 7vh;
+          margin-bottom: 7vh;
+
+          h2 {
+            width: Min(80vw, 1200px);
+          }
+
+          p {
+            width: Min(50vw, 1000px);
+          }
         }
       }
 
       .page-preview-images {
         height: 135vw;
         display: grid;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         grid-template-rows: repeat(2, minmax(min-content, max-content));
         column-gap: 2vw;
