@@ -27,6 +27,7 @@ header {
 
 .navigation {
   position: fixed;
+  z-index: 500;
 
   &.left-navi {
     left: 5%;
@@ -70,9 +71,13 @@ main {
       animation: scroll-anim 1.8s infinite linear;
 
       p {
-        font-size: 20px;
+        font-size: $font-size-rg;
         letter-spacing: 0.15rem;
         color: $light-gray;
+
+        @include md {
+          font-size: 20px;
+        }
 
         @include xl {
           font-size: 24px;
@@ -176,7 +181,7 @@ main {
           margin-right: 3vw;
           margin-bottom: 3vh;
           p {
-            font-size: $font-size-rg;
+            font-size: $font-size-sm;
             overflow: hidden;
 
             @include lg {
@@ -193,7 +198,7 @@ main {
           }
 
           p.number {
-            font-size: $font-size-lg;
+            font-size: $font-size-md;
             overflow: hidden;
 
             @include lg {
@@ -238,7 +243,8 @@ main {
           img {
             width: 100%;
             max-height: 50vh;
-            display: block;
+            box-shadow: inset 0px 4px 50px #000000;
+            // display: block;
 
             opacity: 0;
             transition: all 2s;
@@ -249,7 +255,7 @@ main {
           }
 
           .visit-slider {
-            display: grid;
+            display: none;
             position: absolute;
             width: 100%;
             height: 100%;
@@ -264,6 +270,10 @@ main {
             transition: all 0.3s;
             opacity: 0;
             z-index: 10;
+
+            @include lg {
+              display: grid;
+            }
 
             cursor: pointer;
             text-decoration: none;

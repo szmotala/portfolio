@@ -180,3 +180,7 @@ function displayHeader() {
     });
   }
 }
+
+function outroSectionAnimation() {
+  $(`${window.location.hash}`).removeClass("active");
+}

@@ -49,15 +49,19 @@
     }
   }
 
-  .slide-in_slider {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1500;
-    transition: all 0.5s linear;
+  &.static {
+    .slide-in_logo {
+      .slide-in_img {
+        opacity: 1;
+      }
 
-    transform: translateY(100%);
+      .slide-in_text {
+        h1 {
+          span {
+            transform: translateY(0);
+          }
+        }
+      }
+    }
   }
 }

@@ -24,6 +24,8 @@ $colors: (
       $color: $dark-gray,
       $alpha: 0.7,
     ),
+  "dark-gray": $dark-gray,
+  "light-gray": $light-gray,
 );
 
 //Borders
@@ -40,6 +42,7 @@ $secion-text-margin-left-right: 2rem;
 $secion-text-margin-bottom: 5vh;
 $section-heading-margin: 0 0 2vh 0;
 $hero-margin: 2vh;
+$margin-md: 1.5rem;
 
 //Font sizes
 $base-font-size: 1rem;

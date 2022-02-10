@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SZYMON MOTAŁA PORTFOLIO</title>
+    <title>SM | Portfolio</title>
     <link rel="stylesheet" href="/styles/index.css" />
     <link rel="stylesheet" href="/styles/active_section.css" />
     <script
@@ -33,25 +33,39 @@
           </h1>
         </div>
       </div>
-      <div class="slide-in_slider bg-dark-grey"></div>
     </aside>
 
     <aside class="navigation right-navi">
       <ul class="nav-items">
         <li class="nav-item" onclick="changeHash('welcome')">
           <div class="item active"></div>
+          <div class="tooltip bg-primary-dark">
+            <p class="text-primary">home</p>
+          </div>
         </li>
         <li class="nav-item" onclick="changeHash('blog-site')">
           <div class="item"></div>
+          <div class="tooltip bg-primary-dark">
+            <p class="text-primary">blog project</p>
+          </div>
         </li>
         <li class="nav-item" onclick="changeHash('photography-site')">
           <div class="item"></div>
+          <div class="tooltip bg-primary-dark">
+            <p class="text-primary">photography portfolio project</p>
+          </div>
         </li>
         <li class="nav-item" onclick="changeHash('about')">
           <div class="item"></div>
+          <div class="tooltip bg-primary-dark">
+            <p class="text-primary">about</p>
+          </div>
         </li>
         <li class="nav-item" onclick="changeHash('contact')">
           <div class="item"></div>
+          <div class="tooltip bg-primary-dark">
+            <p class="text-primary">contact</p>
+          </div>
         </li>
       </ul>
     </aside>
@@ -60,18 +74,33 @@
       <ul class="nav-items">
         <li class="nav-item" onclick="changeHash('welcome')">
           <div class="item active"></div>
+          <div class="tooltip bg-primary-dark">
+            <p class="text-primary">home</p>
+          </div>
         </li>
         <li class="nav-item" onclick="changeHash('blog-site')">
           <div class="item"></div>
+          <div class="tooltip bg-primary-dark">
+            <p class="text-primary">blog project</p>
+          </div>
         </li>
         <li class="nav-item" onclick="changeHash('photography-site')">
           <div class="item"></div>
+          <div class="tooltip bg-primary-dark">
+            <p class="text-primary">photography portfolio project</p>
+          </div>
         </li>
         <li class="nav-item" onclick="changeHash('about')">
           <div class="item"></div>
+          <div class="tooltip bg-primary-dark">
+            <p class="text-primary">about</p>
+          </div>
         </li>
         <li class="nav-item" onclick="changeHash('contact')">
           <div class="item"></div>
+          <div class="tooltip bg-primary-dark">
+            <p class="text-primary">contact</p>
+          </div>
         </li>
       </ul>
     </aside>
@@ -101,10 +130,16 @@
         <div class="section-wrapper">
           <div class="section-main-content-2">
             <div class="section-image-content">
-              <img
-                src="/assets/images/blog.webp"
-                alt="Picture of blog landing page"
-              />
+              <a
+                href="https://karo-blog-app.web.app"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/assets/images/blog.webp"
+                  alt="Picture of blog landing page"
+                />
+              </a>
 
               <a
                 class="visit-slider text-primary"
@@ -124,8 +159,13 @@
                   <span> build in Angular and Firebase </span>
                 </p>
               </div>
-              <div class="main-cta-wrapper button-wrapper">
-                <button class="text-primary">read more</button>
+              <div
+                class="main-cta-wrapper button-wrapper"
+                onclick="goToSubpage(1)"
+              >
+                <button class="text-primary" onclick="goToSubpage(1)">
+                  read more
+                </button>
               </div>
             </div>
           </div>
@@ -133,10 +173,10 @@
           <div class="section__decoration text-primary">
             <div class="number-container">
               <p class="number">
-                <span>01</span>
+                <span>01.1</span>
               </p>
               <p>
-                <span> works </span>
+                <span> projects </span>
               </p>
             </div>
           </div>
@@ -148,10 +188,16 @@
         <div class="section-wrapper">
           <div class="section-main-content-2">
             <div class="section-image-content">
-              <img
-                src="/assets/images/photographer.webp"
-                alt="Picture of photography portfolio page"
-              />
+              <a
+                href="https://szmotala.github.io/photography-portfolio-project/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/assets/images/photographer.webp"
+                  alt="Picture of photography portfolio page"
+                />
+              </a>
               <a
                 class="visit-slider text-primary"
                 href="https://szmotala.github.io/photography-portfolio-project/"
@@ -170,8 +216,13 @@
                   <span> static website / HTML JS CSS </span>
                 </p>
               </div>
-              <div class="main-cta-wrapper button-wrapper">
-                <button class="text-primary">read more</button>
+              <div
+                class="main-cta-wrapper button-wrapper"
+                onclick="goToSubpage(2)"
+              >
+                <button class="text-primary" onclick="goToSubpage(2)">
+                  read more
+                </button>
               </div>
             </div>
           </div>
@@ -179,10 +230,10 @@
           <div class="section__decoration text-primary">
             <div class="number-container">
               <p class="number">
-                <span>02</span>
+                <span>01.2</span>
               </p>
               <p>
-                <span> works </span>
+                <span> projects </span>
               </p>
             </div>
           </div>
@@ -217,7 +268,7 @@
           <div class="section__decoration text-primary">
             <div class="number-container">
               <p class="number">
-                <span>03</span>
+                <span>02</span>
               </p>
               <p>
                 <span> about </span>

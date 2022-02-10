@@ -8,6 +8,8 @@
     height: $decoration-height;
 
     .nav-item {
+      position: relative;
+      box-sizing: border-box;
       width: 100%;
       height: 20px;
       display: grid;
@@ -15,14 +17,20 @@
 
       cursor: pointer;
 
-      &:hover {
-        .item {
-          width: 80px;
-          background-color: $orange;
+      @include lg {
+        &:hover {
+          .item {
+            width: 80px;
+            background-color: $orange;
+          }
+
+          .tooltip {
+            opacity: 1;
+          }
         }
       }
 
-      div {
+      .item {
         width: 20px;
         height: 5px;
         background-color: $dark-gray;
@@ -38,6 +46,25 @@
           }
         }
       }
+
+      .tooltip {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: $button-padding;
+        border: $cta-button-border;
+        text-align: center;
+        opacity: 0;
+
+        transition: all 0.5s;
+        pointer-events: none;
+        width: 13.5rem;
+        p {
+          font-size: $font-size-rg;
+          height: max-content;
+          line-height: $font-size-slider;
+        }
+      }
     }
   }
 }
@@ -45,6 +72,10 @@
 .left-navi {
   .nav-item {
     justify-content: left;
+
+    .tooltip {
+      right: -14rem;
+    }
   }
 }
 
@@ -55,5 +86,9 @@
   }
   .nav-item {
     justify-content: right;
+
+    .tooltip {
+      left: -14rem;
+    }
   }
 }

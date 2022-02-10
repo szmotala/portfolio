@@ -4,8 +4,9 @@ const my_name = $(".my-name");
 let canMove = false;
 
 $(window).ready(() => {
-  loadStartAnimation();
   if (window.location.hash === "") window.location.hash = "welcome";
+  if (window.location.hash === "#welcome") loadStartAnimation();
+  else $(".slide-in").css({ transform: "translateY(-100%)" });
 
   $(document).on({
     mousemove: (event) => {
@@ -35,4 +36,19 @@ $(window).ready(() => {
 
 function changeHash(hash) {
   window.location.hash = hash;
+}
+
+function goToSubpage(index) {
+  outroSectionAnimation();
+  let newPage;
+
+  switch (index) {
+    case 1:
+      newPage = "blog-project.html";
+      break;
+    case 2:
+      newPage = "photo-portfolio-project.html";
+      break;
+  }
+  window.location.href = newPage;
 }

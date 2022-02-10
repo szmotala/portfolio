@@ -4,11 +4,7 @@ function loadStartAnimation() {
   });
 
   setTimeout(() => {
-    $(".slide-in_slider").css({ transform: "translateY(-100%)" });
-
-    setTimeout(() => {
-      $(".slide-in").css({ transform: "translateY(-100%)" });
-    }, 100);
+    $(".slide-in").css({ transform: "translateY(-100%)" });
   }, 1700);
 }
 

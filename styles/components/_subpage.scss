@@ -1,0 +1,49 @@
+.subpage-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 3rem;
+
+  @include lg {
+    width: Min(450px, 28vw);
+    align-items: flex-start;
+    text-align: left;
+    justify-content: center;
+    margin-right: $margin-md;
+  }
+
+  h2 {
+    font-size: $font-size-slider;
+    font-weight: $medium;
+    margin-bottom: $margin-md;
+
+    @include breakpoint(1100px) {
+      font-size: $font-size-lg;
+    }
+  }
+
+  p {
+    font-size: 14px;
+    font-weight: $light;
+    line-height: $font-size-logo-md;
+    width: 80vw;
+
+    @include md {
+      font-size: $font-size-rg;
+    }
+
+    @include lg {
+      width: Min(450px, 28vw);
+    }
+  }
+}
+
+.page-preview-images {
+  width: 100vw;
+
+  @include lg {
+    width: Min(80vw, 1200px);
+  }
+}

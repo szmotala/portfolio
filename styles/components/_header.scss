@@ -7,11 +7,12 @@ header {
   padding: $section-padding;
   height: 5vh;
 
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
 
   @include sm {
+    display: flex;
     top: 0;
     height: 10vh;
     font-size: $font-size-md;
@@ -33,6 +34,7 @@ header {
     font-size: $font-size-sm;
     font-weight: $bold;
     letter-spacing: 0.15rem;
+
     @include sm {
       display: block;
     }
