@@ -238,7 +238,7 @@ body.landing-page {
 
 @media (min-width: 1600px) {
   .section-main-content-2 .section-text-content .section-title p {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 }
 
@@ -886,7 +886,7 @@ main .website-wrapper .skills-container .skills-container .skills-exp {
 }
 
 main .website-wrapper .skills-container .skills-container.secondary-skills {
-  margin-bottom: 20vh;
+  margin-bottom: 10vh;
 }
 
 main .website-wrapper .skills-container .skills-container.secondary-skills .skills-exp {

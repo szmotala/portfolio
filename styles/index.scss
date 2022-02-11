@@ -134,7 +134,7 @@ main {
         img {
           transition: all 0.5s;
           opacity: 0;
-          width: 60vw;
+          height: 70vh;
 
           @include md {
             width: Min(475px, 40vw);
@@ -210,7 +210,7 @@ main {
         &::before,
         &::after {
           content: "";
-          background-color: $font-color;
+          background-color: $dark-gray;
           position: absolute;
           bottom: 0;
           right: 0;

@@ -238,7 +238,7 @@ body.landing-page {
 
 @media (min-width: 1600px) {
   .section-main-content-2 .section-text-content .section-title p {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 }
 
@@ -754,7 +754,7 @@ main .hero .main-section-content .hero-section-image img {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   opacity: 0;
-  width: 60vw;
+  height: 70vh;
 }
 
 @media (min-width: 720px) {
@@ -853,7 +853,7 @@ main .other-section .section-wrapper .section__decoration .number-container p.nu
 
 main .other-section .section-wrapper .section__decoration::before, main .other-section .section-wrapper .section__decoration::after {
   content: "";
-  background-color: #ffffff;
+  background-color: #333333;
   position: absolute;
   bottom: 0;
   right: 0;

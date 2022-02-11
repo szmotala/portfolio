@@ -44,14 +44,14 @@ function goToSubpage(index) {
 
   switch (index) {
     case 1:
-      newPage = "blog-project.html";
+      newPage = "blog-project";
       break;
     case 2:
-      newPage = "photo-portfolio-project.html";
+      newPage = "photo-portfolio-project";
       break;
 
     case 3:
-      newPage = "about.html";
+      newPage = "about";
       break;
   }
   window.location.href = newPage;
