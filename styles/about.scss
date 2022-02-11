@@ -1,0 +1,335 @@
+//Vaiables
+@import "variables";
+
+// Base & layouts
+@import "base";
+@import "breakpoints";
+
+@import "colors";
+
+//Components
+@import "components/sections";
+@import "components/header";
+@import "components/buttons";
+@import "components/subpage";
+
+header {
+  transition: all 0.5s;
+  position: absolute;
+}
+
+.arrow-wrapper {
+  position: fixed;
+  width: 2rem;
+  height: 2rem;
+  top: 1rem;
+  left: 1rem;
+  z-index: 999;
+
+  @include sm {
+    top: 12vh;
+    left: 5%;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  overflow-x: hidden;
+
+  .website-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: $section-padding;
+
+    .hero {
+      position: relative;
+      margin-bottom: $secion-text-margin-bottom;
+
+      .scroll_text {
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        transform: translate(-50%, -1rem);
+        text-align: center;
+
+        animation: scroll-anim 1.8s infinite linear;
+
+        p {
+          font-size: $font-size-rg;
+          letter-spacing: 0.15rem;
+          color: $light-gray;
+
+          @include md {
+            font-size: 20px;
+          }
+
+          @include xl {
+            font-size: 24px;
+          }
+        }
+      }
+
+      .main-section-content {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 10%;
+        cursor: default;
+        user-select: none;
+
+        .section-text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 50;
+          text-align: center;
+
+          h1 {
+            width: 100vw;
+            letter-spacing: 4px;
+
+            span {
+              transition: all 0.5s;
+            }
+          }
+
+          p {
+            letter-spacing: 3px;
+
+            span {
+              display: inline-block;
+              transition: all 0.5s 0.2s;
+            }
+          }
+        }
+
+        .hero-section-image {
+          position: relative;
+
+          img {
+            transition: all 0.5s;
+            opacity: 0.2;
+            width: 60vw;
+
+            @include md {
+              width: Min(475px, 40vw);
+            }
+          }
+        }
+      }
+    }
+
+    .about-me-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+
+      margin-top: $secion-text-margin-bottom;
+
+      @include lg {
+        width: Min(80vw, 1800px);
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      @include breakpoint(1200px) {
+        justify-content: space-around;
+      }
+
+      .about-text-content {
+        @include lg {
+          margin-bottom: 0;
+        }
+      }
+
+      .image-wrapper {
+        position: relative;
+        max-width: 50vh;
+        &::after {
+          content: "";
+          width: 100%;
+          height: 100%;
+          top: 0;
+          right: 0;
+          position: absolute;
+          display: block;
+          box-shadow: inset 0px 4px 20px #000000;
+        }
+
+        img {
+          display: block;
+          max-width: 100%;
+        }
+      }
+    }
+
+    .passions-container {
+      margin-top: 7rem;
+      .passions-text-content {
+        @include lg {
+          text-align: center;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+
+          margin-top: 7vh;
+          margin-bottom: 7vh;
+        }
+
+        .passions-text-title {
+          margin-bottom: $secion-text-margin-bottom;
+          h2 {
+            width: Min(80vw, 1200px);
+            margin: 0;
+            margin-bottom: 1rem;
+          }
+          p {
+            width: Min(80vw, 1200px);
+            text-align: center;
+            @include md {
+              font-size: $font-size-md;
+            }
+
+            @include lg {
+              font-size: $font-size-slider;
+            }
+          }
+        }
+
+        p.main-text {
+          width: Min(80vw, 1000px);
+        }
+      }
+    }
+
+    .skills-container {
+      margin-top: 3rem;
+      text-align: center;
+
+      @include lg {
+        margin-top: 5rem;
+        width: Min(80vw, 1200px);
+      }
+
+      .skill-title {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 3rem;
+
+        h2 {
+          width: Min(80vw, 1200px);
+          margin-bottom: 0;
+        }
+      }
+
+      .skills-subtitle {
+        font-size: $font-size-rg;
+        font-weight: $medium;
+        letter-spacing: 2px;
+        margin-bottom: 2rem;
+
+        @include sm {
+          font-size: $font-size-md;
+        }
+
+        @include lg {
+          font-size: $font-size-logo-md;
+        }
+      }
+
+      .skill {
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        @include sm {
+          width: 8rem;
+        }
+
+        .icon-wrapper {
+          display: grid;
+          justify-content: center;
+          align-items: center;
+
+          height: 20vw;
+
+          @include sm {
+            height: 10rem;
+          }
+
+          img {
+            width: 100%;
+          }
+        }
+
+        svg {
+          width: 100%;
+          height: max-content;
+          margin-top: 1rem;
+          .filled {
+            fill: $orange;
+          }
+        }
+      }
+
+      .skills-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+
+        .skills-exp {
+          width: 100%;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+
+          @include lg {
+            width: Min(50vw, 800px);
+          }
+        }
+
+        &.secondary-skills {
+          margin-bottom: 20vh;
+          .skills-exp {
+            flex-wrap: wrap;
+            .skill {
+              margin: 2rem 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes scroll-anim {
+  0% {
+    transform: translate(-50%, -1rem);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, 1rem);
+    opacity: 0;
+  }
+}

@@ -22,6 +22,11 @@
     @include breakpoint(1100px) {
       font-size: $font-size-lg;
     }
+
+    @include xl {
+      font-size: $font-size-xl;
+      margin-bottom: $margin-lg;
+    }
   }
 
   p {
@@ -29,6 +34,7 @@
     font-weight: $light;
     line-height: $font-size-logo-md;
     width: 80vw;
+    text-align: justify;
 
     @include md {
       font-size: $font-size-rg;
@@ -36,6 +42,11 @@
 
     @include lg {
       width: Min(450px, 28vw);
+    }
+
+    @include xl {
+      font-size: $font-size-md;
+      line-height: $font-size-slider;
     }
   }
 }

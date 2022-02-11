@@ -4,6 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Szymon Motała Junior Frontend Developer portfolio website"
+    />
+    <meta
+      name="keywords"
+      content="Junior Frontend Developer, Portfolio, Frontend"
+    />
     <title>SM | Portfolio</title>
     <link rel="stylesheet" href="/styles/index.css" />
     <link rel="stylesheet" href="/styles/active_section.css" />
@@ -244,9 +252,9 @@
       <section id="about" class="about other-section section">
         <div class="section-wrapper">
           <div class="section-main-content-2">
-            <div class="section-image-content">
+            <div class="section-image-content image-shadow">
               <img
-                src="/assets/images/person.png"
+                src="/assets/images/personal.webp"
                 alt="Picture of Szymon Motała"
               />
             </div>
@@ -259,8 +267,13 @@
                   <span> who am I? </span>
                 </p>
               </div>
-              <div class="main-cta-wrapper button-wrapper">
-                <button class="text-primary">get to know me</button>
+              <div
+                class="main-cta-wrapper button-wrapper"
+                onclick="goToSubpage(3)"
+              >
+                <button class="text-primary" onclick="goToSubpage(3)">
+                  get to know me
+                </button>
               </div>
             </div>
           </div>

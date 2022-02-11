@@ -49,6 +49,10 @@ function goToSubpage(index) {
     case 2:
       newPage = "photo-portfolio-project.html";
       break;
+
+    case 3:
+      newPage = "about.html";
+      break;
   }
   window.location.href = newPage;
 }

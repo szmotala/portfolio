@@ -906,6 +906,18 @@ main .other-section .section-wrapper .section-main-content-2 .section-image-cont
   }
 }
 
+main .other-section .section-wrapper .section-main-content-2 .section-image-content.image-shadow::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  display: block;
+  -webkit-box-shadow: inset 0px 4px 50px #000000;
+          box-shadow: inset 0px 4px 50px #000000;
+}
+
 main .other-section .section-wrapper .section-main-content-2 .section-image-content .visit-slider {
   display: none;
   position: absolute;

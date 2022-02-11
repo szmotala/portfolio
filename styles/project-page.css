@@ -172,11 +172,19 @@ header p {
   }
 }
 
+@media (min-width: 1600px) {
+  .subpage-text h2 {
+    font-size: 4rem;
+    margin-bottom: 3rem;
+  }
+}
+
 .subpage-text p {
   font-size: 14px;
   font-weight: 300;
   line-height: 2rem;
   width: 80vw;
+  text-align: justify;
 }
 
 @media (min-width: 720px) {
@@ -188,6 +196,13 @@ header p {
 @media (min-width: 960px) {
   .subpage-text p {
     width: Min(450px, 28vw);
+  }
+}
+
+@media (min-width: 1600px) {
+  .subpage-text p {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
   }
 }
 
