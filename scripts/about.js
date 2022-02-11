@@ -1,7 +1,7 @@
 const hero = $(".hero");
 const my_name = $(".my-name");
 
-let canMove = false;
+let canMove = true;
 
 $(window).ready(() => {
   $(".hero").on({
