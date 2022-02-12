@@ -67,7 +67,7 @@ body.landing-page {
 }
 
 .section {
-  width: Min(80vw, 1900px);
+  width: Min(75vw, 1800px);
   min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -282,6 +282,7 @@ body.landing-page {
   .left-navi .nav-items .nav-item:hover .tooltip,
   .right-navi .nav-items .nav-item:hover .tooltip {
     opacity: 1;
+    width: 15rem;
   }
 }
 
@@ -322,6 +323,7 @@ body.landing-page {
   transition: all 0.5s;
   pointer-events: none;
   width: 13.5rem;
+  white-space: nowrap;
 }
 
 .left-navi .nav-items .nav-item .tooltip p,
@@ -341,6 +343,12 @@ body.landing-page {
 
 .left-navi .nav-item .tooltip {
   right: -14rem;
+}
+
+@media (min-width: 960px) {
+  .left-navi .nav-item .tooltip {
+    right: -16rem;
+  }
 }
 
 .right-navi {
@@ -363,6 +371,12 @@ body.landing-page {
 
 .right-navi .nav-item .tooltip {
   left: -14rem;
+}
+
+@media (min-width: 960px) {
+  .right-navi .nav-item .tooltip {
+    left: -16rem;
+  }
 }
 
 header {
@@ -583,8 +597,8 @@ header p {
 }
 
 .main-cta-wrapper:hover button::before {
-  -webkit-transform: rotate(-20deg) translate(30vw);
-          transform: rotate(-20deg) translate(30vw);
+  -webkit-transform: rotate(-20deg) translate(80vw);
+          transform: rotate(-20deg) translate(80vw);
 }
 
 .main-cta-wrapper:hover::before {
@@ -754,12 +768,19 @@ main .hero .main-section-content .hero-section-image img {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   opacity: 0;
-  height: 70vh;
+  width: 80vw;
 }
 
 @media (min-width: 720px) {
   main .hero .main-section-content .hero-section-image img {
+    max-height: Min(70vh, 80vw);
     width: Min(475px, 40vw);
+  }
+}
+
+@media (min-width: 960px) {
+  main .hero .main-section-content .hero-section-image img {
+    max-height: 70vh;
   }
 }
 

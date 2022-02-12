@@ -26,6 +26,7 @@
 
           .tooltip {
             opacity: 1;
+            width: 15rem;
           }
         }
       }
@@ -59,6 +60,8 @@
         transition: all 0.5s;
         pointer-events: none;
         width: 13.5rem;
+        white-space: nowrap;
+
         p {
           font-size: $font-size-rg;
           height: max-content;
@@ -75,6 +78,10 @@
 
     .tooltip {
       right: -14rem;
+
+      @include lg {
+        right: -16rem;
+      }
     }
   }
 }
@@ -89,6 +96,10 @@
 
     .tooltip {
       left: -14rem;
+
+      @include lg {
+        left: -16rem;
+      }
     }
   }
 }

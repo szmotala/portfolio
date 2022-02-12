@@ -67,7 +67,7 @@ body.landing-page {
 }
 
 .section {
-  width: Min(80vw, 1900px);
+  width: Min(75vw, 1800px);
   min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -383,8 +383,8 @@ header p {
 }
 
 .main-cta-wrapper:hover button::before {
-  -webkit-transform: rotate(-20deg) translate(30vw);
-          transform: rotate(-20deg) translate(30vw);
+  -webkit-transform: rotate(-20deg) translate(80vw);
+          transform: rotate(-20deg) translate(80vw);
 }
 
 .main-cta-wrapper:hover::before {

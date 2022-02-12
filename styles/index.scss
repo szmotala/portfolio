@@ -134,10 +134,15 @@ main {
         img {
           transition: all 0.5s;
           opacity: 0;
-          height: 70vh;
+          width: 80vw;
 
           @include md {
+            max-height: Min(70vh, 80vw);
             width: Min(475px, 40vw);
+          }
+
+          @include lg {
+            max-height: 70vh;
           }
         }
       }
