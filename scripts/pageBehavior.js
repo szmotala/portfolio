@@ -81,8 +81,6 @@ function stateChangeDetector(scrollDelay) {
     },
 
     resize: function () {
-      console.log("tutaj");
-      console.log($(`${window.location.hash}`).offset().top);
       currentPosition = $(`${window.location.hash}`).offset().top;
       $("html, body").scrollTop(currentPosition);
     },

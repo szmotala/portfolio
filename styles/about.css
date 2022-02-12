@@ -68,7 +68,7 @@ body.landing-page {
 
 .section {
   width: Min(75vw, 1800px);
-  min-height: 100vh;
+  min-height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
