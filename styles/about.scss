@@ -12,7 +12,15 @@
 @import "components/header";
 @import "components/buttons";
 @import "components/subpage";
-
+body {
+  background-image: linear-gradient(
+    115.44deg,
+    #1572b6 -11.05%,
+    #000000 34.42%,
+    #333333 82.91%,
+    #ff7a00 108.24%
+  );
+}
 header {
   transition: all 0.5s;
   position: absolute;
@@ -53,6 +61,7 @@ main {
     .hero {
       position: relative;
       margin-bottom: $secion-text-margin-bottom;
+      height: 100vh;
 
       .scroll_text {
         position: absolute;
@@ -98,19 +107,10 @@ main {
           h1 {
             width: 100vw;
             letter-spacing: 4px;
-
-            span {
-              transition: all 0.5s;
-            }
           }
 
           p {
             letter-spacing: 3px;
-
-            span {
-              display: inline-block;
-              transition: all 0.5s 0.2s;
-            }
           }
         }
 
@@ -118,12 +118,16 @@ main {
           position: relative;
 
           img {
-            transition: all 0.5s;
             opacity: 0.2;
-            width: 60vw;
+            width: 80vw;
 
             @include md {
+              max-height: Min(70vh, 80vw);
               width: Min(475px, 40vw);
+            }
+
+            @include lg {
+              width: Min(600px, 50vw);
             }
           }
         }

@@ -74,6 +74,7 @@ header {
   margin: 0 auto;
   padding: 0 5%;
   height: 5vh;
+  z-index: 99;
   display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -109,23 +110,38 @@ header h3 {
   }
 }
 
-header p {
-  display: none;
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.15rem;
+header nav {
+  width: 40vw;
 }
 
-@media (min-width: 480px) {
-  header p {
-    display: block;
-  }
+header nav ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
 }
 
-@media (min-width: 720px) {
-  header p {
-    font-size: 1.5rem;
-  }
+header nav ul li {
+  cursor: pointer;
+}
+
+header nav ul li:hover {
+  text-decoration: underline;
+}
+
+header nav ul li.active {
+  color: #ff7a00;
+}
+
+header nav ul li a {
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .subpage-text {
@@ -307,7 +323,7 @@ header p {
 .main-cta-wrapper button {
   padding: 1vh 2vw;
   font-size: 1rem;
-  background: #000000;
+  background: transparent;
   font-weight: 400;
   border: 1px solid #ffffff;
   cursor: pointer;

@@ -34,7 +34,7 @@
       .item {
         width: 20px;
         height: 5px;
-        background-color: $dark-gray;
+        background-color: $font-color;
         border-radius: 20px;
         transition: all 0.5s ease;
 
@@ -60,7 +60,10 @@
         transition: all 0.5s;
         pointer-events: none;
         width: 13.5rem;
-        white-space: nowrap;
+
+        @include lg {
+          width: 18rem;
+        }
 
         p {
           font-size: $font-size-rg;

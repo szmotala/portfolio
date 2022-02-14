@@ -19,6 +19,14 @@ let index = 0;
 
 let lastHash, newHash;
 
+// const backgrounds = [
+//   "linear-gradient(115.44deg,#1572b6 -11.05%, #000000 34.42%,#333333 82.91%, #ff7a00 108.24%)",
+//   "linear-gradient(116.71deg, #4E3B2F -3.9%, #6C7273 102.03%)",
+//   "linear-gradient(116.27deg, #BBBBBB -4.29%, #000000 91.95%)",
+//   "linear-gradient(119.54deg, #034883 -12.4%, #1D1816 17.73%, #705E4D 79.11%, #6B6D59 109.62%)",
+//   "linear-gradient(115.44deg,#1572b6 -11.05%, #000000 34.42%,#333333 82.91%, #ff7a00 108.24%)",
+// ];
+
 function fillHashArray() {
   $("section").each(function () {
     hashes.push(this.id);
@@ -152,18 +160,14 @@ function refreshWindowPostion() {
 
 //Set navbar element active according to current section displayed
 function changeNavItemState() {
-  let j = 0;
-  $(".right-navi .nav-item .item").each(function () {
+  $(".right-navi .nav-item .item").each(function (j) {
     $(this).removeClass("active");
     if (j === index) $(this).addClass("active");
-    j++;
   });
 
-  j = 0;
-  $(".left-navi .nav-item .item").each(function () {
+  $(".left-navi .nav-item .item").each(function (j) {
     $(this).removeClass("active");
     if (j === index) $(this).addClass("active");
-    j++;
   });
 }
 

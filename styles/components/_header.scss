@@ -6,6 +6,7 @@ header {
   margin: 0 auto;
   padding: $section-padding;
   height: 5vh;
+  z-index: 99;
 
   display: none;
   justify-content: center;
@@ -29,17 +30,30 @@ header {
     }
   }
 
-  p {
-    display: none;
-    font-size: $font-size-sm;
-    font-weight: $bold;
-    letter-spacing: 0.15rem;
+  nav {
+    width: 40vw;
+    ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width: 100%;
 
-    @include sm {
-      display: block;
-    }
-    @include md {
-      font-size: $font-size-md;
+      li {
+        cursor: pointer;
+        &:hover {
+          text-decoration: underline;
+        }
+
+        &.active {
+          color: $orange;
+        }
+
+        a {
+          cursor: pointer;
+          text-decoration: none;
+        }
+      }
     }
   }
 }

@@ -17,6 +17,18 @@
 body {
   overflow: hidden;
   scroll-behavior: smooth;
+  background-image: linear-gradient(
+    115.44deg,
+    #1572b6 -20.05%,
+    #000000 34.42%,
+    #333333 82.91%,
+    #ff7a00 108.24%
+  );
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  transition: background-position 1s;
 }
 
 header {
@@ -142,7 +154,7 @@ main {
           }
 
           @include lg {
-            max-height: 70vh;
+            width: Min(600px, 50vw);
           }
         }
       }
@@ -215,10 +227,10 @@ main {
         &::before,
         &::after {
           content: "";
-          background-color: $dark-gray;
+          background-color: $font-color;
           position: absolute;
           bottom: 0;
-          right: 0;
+          right: -20%;
           transition: all 0.5s;
         }
 
@@ -245,22 +257,37 @@ main {
 
           transform: translate(-2vw, 2vh);
 
+          width: 40vw;
+
+          @include lg {
+            width: 100%;
+            // height: 55vh;
+          }
+
+          @include xl {
+            width: 85%;
+          }
+
           &.none-cursor-img {
             cursor: default;
           }
 
           img {
             width: 100%;
-            max-height: 50vh;
+            height: auto;
             box-shadow: inset 0px 4px 50px #000000;
-            // display: block;
 
             opacity: 0;
             transition: all 2s;
 
-            @include lg {
-              max-height: 70vh;
-            }
+            // @include lg {
+            //   width: 100%;
+            //   // height: 55vh;
+            // }
+
+            // @include xl {
+            //   width: 80%;
+            // }
           }
 
           &.image-shadow {
@@ -272,7 +299,7 @@ main {
               left: 0;
               position: absolute;
               display: block;
-              box-shadow: inset 0px 4px 50px #000000;
+              // box-shadow: inset 0px 4px 50px #000000;
             }
           }
 
@@ -283,7 +310,7 @@ main {
             height: 100%;
             top: 0;
             left: 0;
-            background-color: rgba($color: $main-bg, $alpha: 0.9);
+            background-color: rgba($color: $main-bg, $alpha: 0.3);
 
             justify-content: center;
             align-items: center;
@@ -327,7 +354,7 @@ main {
 
           &:hover {
             img {
-              opacity: 0.6;
+              opacity: 0.1;
             }
           }
         }
@@ -368,6 +395,22 @@ main {
     }
   }
 
+  .about {
+    .section-wrapper {
+      .section-main-content-2 {
+        .section-text-content {
+          margin-left: 6vw;
+        }
+
+        .section-image-content:hover {
+          img {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
   .contact {
     .section-wrapper {
       min-height: 80vh;
@@ -378,10 +421,18 @@ main {
       .section-main-content-2 {
         .section-image-content {
           overflow: visible;
-
           .envelope {
+            max-height: 40vh;
+            background-color: transparent;
+            box-shadow: none;
             animation: envelope 4s linear infinite;
             animation-delay: 2s;
+          }
+
+          &:hover {
+            img {
+              opacity: 1;
+            }
           }
         }
 
@@ -400,7 +451,7 @@ main {
               text-decoration: none;
               font-size: $font-size-rg;
               font-weight: $bold;
-              text-decoration: underline wavy $font-color;
+              text-decoration: none;
 
               @include sm {
                 font-size: $font-size-md;
