@@ -83,10 +83,12 @@
     align-items: center;
     text-align: center;
 
+    margin: 0;
+
     @include lg {
       align-items: flex-start;
       text-align: left;
-      margin-left: 3 vw;
+      margin-left: 3vw;
     }
 
     .section-title {

@@ -188,6 +188,7 @@ body.landing-page {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
+  margin: 0;
 }
 
 @media (min-width: 960px) {
@@ -196,7 +197,7 @@ body.landing-page {
         -ms-flex-align: start;
             align-items: flex-start;
     text-align: left;
-    margin-left: 3 vw;
+    margin-left: 3vw;
   }
 }
 

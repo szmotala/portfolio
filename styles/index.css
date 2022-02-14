@@ -188,6 +188,7 @@ body.landing-page {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
+  margin: 0;
 }
 
 @media (min-width: 960px) {
@@ -196,7 +197,7 @@ body.landing-page {
         -ms-flex-align: start;
             align-items: flex-start;
     text-align: left;
-    margin-left: 3 vw;
+    margin-left: 3vw;
   }
 }
 
@@ -828,7 +829,7 @@ main .other-section .section-wrapper {
 
 @media (min-width: 720px) {
   main .other-section .section-wrapper {
-    height: 80vh;
+    height: 90vh;
   }
 }
 
@@ -899,7 +900,7 @@ main .other-section .section-wrapper .section__decoration .number-container p.nu
 
 @media (min-width: 960px) {
   main .other-section .section-wrapper .section__decoration .number-container p.number {
-    font-size: 5.25rem;
+    font-size: 4rem;
   }
 }
 
@@ -940,7 +941,7 @@ main .other-section .section-wrapper .section-main-content-2 .section-image-cont
   cursor: pointer;
   -webkit-transform: translate(-2vw, 2vh);
           transform: translate(-2vw, 2vh);
-  width: 40vw;
+  width: Min(40vw, 40vh);
 }
 
 @media (min-width: 960px) {
@@ -967,6 +968,12 @@ main .other-section .section-wrapper .section-main-content-2 .section-image-cont
   opacity: 0;
   -webkit-transition: all 2s;
   transition: all 2s;
+}
+
+@media (min-width: 1600px) {
+  main .other-section .section-wrapper .section-main-content-2 .section-image-content img {
+    width: 90%;
+  }
 }
 
 main .other-section .section-wrapper .section-main-content-2 .section-image-content.image-shadow::after {
@@ -1082,8 +1089,10 @@ main .other-section .section-wrapper .section-main-content-2 .button-wrapper {
   }
 }
 
-main .about .section-wrapper .section-main-content-2 .section-text-content {
-  margin-left: 6vw;
+@media (min-width: 960px) {
+  main .about .section-wrapper .section-main-content-2 .section-text-content {
+    margin-left: 6vw;
+  }
 }
 
 main .about .section-wrapper .section-main-content-2 .section-image-content:hover img {
