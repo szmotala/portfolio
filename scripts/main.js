@@ -61,3 +61,8 @@ function goToSubpage(index) {
   }
   window.location.href = newPage;
 }
+
+function closeMenu() {
+  $(".header").toggleClass("active");
+  $(".menu").toggleClass("active");
+}
