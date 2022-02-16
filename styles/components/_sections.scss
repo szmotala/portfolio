@@ -11,7 +11,7 @@
   position: relative;
 
   h1 {
-    font-size: $font-size-md;
+    font-size: 4vh;
     font-weight: $bold;
     margin-bottom: $hero-margin;
 
@@ -42,7 +42,7 @@
   }
 
   p {
-    font-size: $font-size-rg;
+    font-size: 3vh;
     font-weight: $medium;
 
     @include sm {
@@ -64,11 +64,14 @@
 
   display: grid;
   grid-template-columns: 1fr; //repeat(2, minmax(0, 1fr));
-  grid-template-rows: 1.5fr 1fr;
+  grid-template-rows: 50% 50%;
   align-items: center;
-  padding: 10%;
+  padding: 5%;
 
-  background: rgba($color: #000000, $alpha: 0.2);
+  background: rgba($color: #000000, $alpha: 0.1);
+  border-top: 1px solid rgba($color: #ffffff, $alpha: 0.04);
+  border-left: 1px solid rgba($color: #ffffff, $alpha: 0.04);
+  box-shadow: 5px 5px 10px rgba($color: #000000, $alpha: 0.1);
 
   @include lg {
     grid-template-columns: 1fr 1fr; //repeat(2, minmax(0, 1fr));
@@ -79,13 +82,16 @@
   .section-text-content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     text-align: center;
+    justify-content: space-around;
+
+    height: 100%;
 
     margin: 0;
 
     @include lg {
+      justify-content: center;
       align-items: flex-start;
       text-align: left;
       margin-left: 3vw;
@@ -95,32 +101,40 @@
       margin-bottom: $secion-text-margin-bottom;
       max-width: 100%;
 
+      @include sm {
+        margin-top: $secion-text-margin-bottom;
+      }
+
+      @include lg {
+        margin-top: 0;
+      }
+
       h2 {
         font-size: $font-size-logo-md;
         font-weight: $bold;
         margin: $section-heading-margin;
 
         @include sm {
-          font-size: $font-size-slider;
+          font-size: $font-size-md;
         }
 
         @include md {
-          font-size: $font-size-lg;
+          font-size: 4vh;
         }
         @include xl {
-          font-size: $font-size-xl;
+          font-size: $font-size-lg;
         }
       }
 
       p {
-        font-size: $font-size-rg;
+        font-size: 3vh;
 
-        @include md {
-          font-size: $font-size-md;
+        @include lg {
+          font-size: 1.7rem;
         }
 
         @include xl {
-          font-size: 2.2rem;
+          font-size: 2rem;
         }
       }
     }

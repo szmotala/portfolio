@@ -1,59 +1,78 @@
-header {
+.header {
   position: fixed;
-  top: 5%;
-  left: 0;
-  width: 100%;
-  margin: 0 auto;
-  padding: $section-padding;
-  height: 5vh;
-  z-index: 99;
-
-  display: none;
+  z-index: 990;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  @include sm {
-    display: flex;
-    top: 0;
-    height: 10vh;
-    font-size: $font-size-md;
+  transform: scaleX(0);
+  transform-origin: right;
+
+  @include md {
+    transform: scaleX(1);
+    background-color: transparent;
+    flex-direction: row;
     justify-content: space-between;
+    height: 10vh;
+    padding: 0 5%;
   }
 
   h3 {
-    font-size: $font-size-sm;
-    font-weight: $bold;
-    letter-spacing: 0.1rem;
+    letter-spacing: 1px;
+    font-size: $font-size-md;
+    margin-bottom: 10vh;
 
     @include md {
-      font-size: $font-size-md;
+      font-size: 1.2rem;
+      margin: 0;
     }
   }
 
   nav {
-    width: 40vw;
     ul {
       list-style: none;
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
       width: 100%;
 
-      li {
-        cursor: pointer;
-        &:hover {
-          text-decoration: underline;
-        }
+      @include md {
+        display: flex;
+        width: 50vw;
+      }
 
-        &.active {
-          color: $orange;
+      @include lg {
+        width: 30rem;
+      }
+
+      li {
+        margin-bottom: 6vh;
+        width: 100%;
+
+        @include md {
+          margin: 0;
         }
 
         a {
-          cursor: pointer;
+          display: block;
           text-decoration: none;
+          width: 100%;
+          text-align: center;
+          font-size: $font-size-md;
+
+          @include md {
+            font-size: 1.2rem;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
         }
       }
     }
+  }
+
+  &.active {
+    transform: scaleX(1);
   }
 }

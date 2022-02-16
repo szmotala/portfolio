@@ -172,17 +172,17 @@ function changeNavItemState() {
 }
 
 function displayHeader() {
-  if (lastHash !== "#welcome") {
-    $(".header").css({
-      transform: "translateY(0)",
-      opacity: 1,
-    });
-  } else {
-    $(".header").css({
-      transform: "translateY(-100%)",
-      opacity: 0,
-    });
-  }
+  // if (lastHash !== "#welcome") {
+  //   $(".header").css({
+  //     transform: "translateY(0)",
+  //     opacity: 1,
+  //   });
+  // } else {
+  //   $(".header").css({
+  //     transform: "translateY(0)",
+  //     opacity: 1,
+  //   });
+  // }
 }
 
 function outroSectionAnimation() {

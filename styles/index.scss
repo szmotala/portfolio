@@ -32,9 +32,72 @@ body {
 }
 
 header {
-  transition: all 0.5s;
-  transform: translateY(-10rem);
-  opacity: 0;
+  transition: transform 0.5s;
+}
+
+.menu {
+  position: fixed;
+  z-index: 999;
+  right: 4vw;
+  top: 4vh;
+
+  .menu-btn-container {
+    width: 40px;
+    height: 30px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    .menu-btn {
+      width: 40px;
+      height: 4px;
+      background-color: $font-color;
+      border-radius: 36px;
+      transition: transform 0.5s, width 1s;
+
+      &::after,
+      &::before {
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 4px;
+        background-color: $font-color;
+        border-radius: 36px;
+        display: inline-block;
+        transition: transform 0.5s, width 1s;
+        transform-origin: 0 50%;
+      }
+
+      &::after {
+        transform: translateY(-13px);
+      }
+
+      &::before {
+        transform: translateY(13px);
+      }
+    }
+  }
+
+  &.active {
+    .menu-btn-container {
+      .menu-btn {
+        &::before {
+          border-radius: 0 36px 36px 0;
+          width: 20px;
+          transform: translateY(-1px) rotate(45deg);
+        }
+        &::after {
+          border-radius: 0 36px 36px 0;
+          width: 20px;
+          transform: translateY(1px) rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  @include md {
+    display: none;
+  }
 }
 
 .navigation {
@@ -147,6 +210,12 @@ main {
           transition: all 0.5s;
           opacity: 0;
           width: 80vw;
+          height: auto;
+
+          @include sm {
+            max-height: Min(70vh, 80vw);
+            width: 50vw;
+          }
 
           @include md {
             max-height: Min(70vh, 80vw);
@@ -154,7 +223,7 @@ main {
           }
 
           @include lg {
-            width: Min(600px, 50vw);
+            width: Min(600px, 40vw);
           }
         }
       }
@@ -186,7 +255,7 @@ main {
         bottom: -2.5%;
 
         @include md {
-          right: 0;
+          right: -9.5%;
           bottom: 0;
         }
 
@@ -204,8 +273,6 @@ main {
             @include lg {
               font-size: $font-size-md;
             }
-            // @include xl {
-            // }
 
             span {
               display: inline-block;
@@ -230,7 +297,7 @@ main {
           background-color: $font-color;
           position: absolute;
           bottom: 0;
-          right: -20%;
+          right: 0;
           transition: all 0.5s;
         }
 
@@ -245,8 +312,8 @@ main {
       }
 
       .section-main-content-2 {
+        overflow: hidden;
         .section-image-content {
-          height: max-content;
           grid-column: 1;
           grid-row: 1;
           justify-self: center;
@@ -256,44 +323,61 @@ main {
           cursor: pointer;
           transform: translate(-2vw, 2vh);
 
-          width: Min(40vw, 40vh);
+          display: flex;
+          justify-content: center;
+          align-items: center;
 
-          @include lg {
-            width: 100%;
-            // height: 55vh;
+          width: 50vw;
+          height: 100%;
+
+          @include sm {
+            margin-bottom: 0;
+            height: 33vh;
           }
 
-          @include xl {
-            width: 85%;
+          @include lg {
+            height: 100%;
+            width: 33vw;
+            margin-bottom: 0;
           }
 
           &.none-cursor-img {
             cursor: default;
           }
 
-          img {
-            width: 100%;
-            height: auto;
-            box-shadow: inset 0px 4px 50px #000000;
+          a {
+            display: block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
 
-            opacity: 0;
-            transition: all 2s;
-
-            @include xl {
-              width: 90%;
-            }
-          }
-
-          &.image-shadow {
-            &::after {
-              content: "";
-              width: 100%;
-              height: 100%;
-              top: 0;
-              left: 0;
-              position: absolute;
+            img {
               display: block;
-              // box-shadow: inset 0px 4px 50px #000000;
+              justify-self: center;
+              object-fit: cover;
+              object-position: center;
+              width: 100%;
+              max-height: 35vh;
+              opacity: 0;
+              transition: transform 2s opacity 1s;
+              margin: 0;
+
+              @include sm {
+                margin-bottom: 1rem;
+                width: 100%;
+              }
+
+              @include md {
+                max-height: 40vh;
+                margin-bottom: 0;
+              }
+
+              @include lg {
+                height: auto;
+                max-height: 70vh;
+                max-width: 100%;
+              }
             }
           }
 
@@ -356,17 +440,11 @@ main {
         .section-text-content {
           grid-row: 2;
 
-          width: 100%;
-
           @include lg {
             grid-row: 1;
           }
 
           .section-title {
-            @include lg {
-              margin-left: $secion-text-margin-left-right;
-            }
-
             h2 {
               letter-spacing: Min(2px, 0.1vw);
               width: 100%;
@@ -381,9 +459,6 @@ main {
 
         .button-wrapper {
           margin-left: 0;
-          @include lg {
-            margin-left: $secion-text-margin-left-right;
-          }
         }
       }
     }
@@ -392,15 +467,11 @@ main {
   .about {
     .section-wrapper {
       .section-main-content-2 {
-        .section-text-content {
-          @include lg {
-            margin-left: 6vw;
-          }
-        }
-
-        .section-image-content:hover {
-          img {
-            opacity: 1;
+        .section-image-content {
+          &:hover {
+            img {
+              opacity: 1;
+            }
           }
         }
       }
@@ -409,20 +480,32 @@ main {
 
   .contact {
     .section-wrapper {
-      min-height: 80vh;
+      min-height: 90vh;
       display: flex;
       justify-content: center;
       align-items: center;
 
       .section-main-content-2 {
+        grid-template-rows: 40% 60%;
+        width: 100%;
+
+        @include lg {
+          grid-template-rows: 100%;
+        }
+
         .section-image-content {
           overflow: visible;
+          height: auto;
           .envelope {
-            max-height: 40vh;
+            max-height: 20vh;
             background-color: transparent;
             box-shadow: none;
             animation: envelope 4s linear infinite;
             animation-delay: 2s;
+
+            @include xl {
+              max-height: 30vh;
+            }
           }
 
           &:hover {
@@ -433,12 +516,15 @@ main {
         }
 
         .section-text-content {
+          margin: 0;
           p {
+            font-size: 4vw;
+
             @include lg {
               font-size: $font-size-md;
             }
             @include xl {
-              font-size: $font-size-slider;
+              font-size: 1.8rem;
             }
           }
           .mail-content {
@@ -448,12 +534,9 @@ main {
               font-size: $font-size-rg;
               font-weight: $bold;
               text-decoration: none;
+              font-size: 4.5vw;
 
               @include sm {
-                font-size: $font-size-md;
-              }
-              @include md {
-                font-size: $font-size-md;
               }
 
               @include lg {
@@ -461,7 +544,7 @@ main {
               }
 
               @include xl {
-                font-size: 3rem;
+                font-size: 2.2rem;
               }
             }
           }

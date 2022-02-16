@@ -28,6 +28,11 @@ $(window).ready(() => {
     my_name.append(element);
   });
 
+  $(".menu").click(function () {
+    $(".header").toggleClass("active");
+    $(this).toggleClass("active");
+  });
+
   fillHashArray();
   stateChangeDetector(1000);
 
