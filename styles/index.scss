@@ -559,11 +559,27 @@ main {
 
         .section-text-content {
           margin: 0;
+          h2 {
+            font-size: 5vw;
+
+            @include md {
+              font-size: 4vh;
+            }
+
+            @include xl {
+              font-size: $font-size-lg;
+            }
+          }
+
           p {
             font-size: 4vw;
 
+            @include md {
+              font-size: 2vw;
+            }
+
             @include lg {
-              font-size: $font-size-md;
+              font-size: Min(4vw, $font-size-md);
             }
             @include xl {
               font-size: 1.8rem;
@@ -585,7 +601,8 @@ main {
                 transform: translateY(100%);
               }
 
-              @include sm {
+              @include md {
+                font-size: 2vw;
               }
 
               @include lg {
@@ -624,7 +641,7 @@ main {
               a {
                 text-decoration: none;
                 img {
-                  width: 40px;
+                  width: 30px;
 
                   @include lg {
                     width: 60px;
@@ -674,5 +691,24 @@ main {
   }
   100% {
     transform: translateY(0);
+  }
+}
+
+ul.transition {
+  display: flex;
+  position: fixed;
+  z-index: 1500;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  margin: 0;
+  pointer-events: none;
+
+  li {
+    transform: scaleY(0);
+    background: white;
+    width: 20%;
+    transform-origin: "bottom";
   }
 }

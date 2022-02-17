@@ -261,79 +261,6 @@ body.landing-page {
   }
 }
 
-.slide-in {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  overflow: hidden;
-  -webkit-transition: all 0.2s linear;
-  transition: all 0.2s linear;
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.slide-in .slide-in_logo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.slide-in .slide-in_logo .slide-in_img img {
-  width: 20vh;
-}
-
-.slide-in .slide-in_logo .slide-in_text {
-  width: 100%;
-  text-align: center;
-  margin-top: 4vh;
-}
-
-.slide-in .slide-in_logo .slide-in_text h1 {
-  color: #ffffff;
-  font-size: 2.5rem;
-  font-weight: 500;
-  letter-spacing: 0.1rem;
-  background: #000000;
-  overflow-y: hidden;
-  position: relative;
-}
-
-.slide-in .slide-in_logo .slide-in_text h1 span {
-  display: inline-block;
-  -webkit-transform: translateY(100%);
-          transform: translateY(100%);
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
-.slide-in.static .slide-in_logo .slide-in_img {
-  opacity: 1;
-}
-
-.slide-in.static .slide-in_logo .slide-in_text h1 span {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-}
-
 .button-content {
   width: 100%;
   height: -webkit-max-content;
@@ -451,12 +378,22 @@ body.landing-page {
   background-color: rgba(255, 255, 255, 0.4);
 }
 
-header {
+.header {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   position: absolute;
-  height: 5vh;
+  height: 10vh;
   top: 0;
+  padding: 0 10%;
+}
+
+@media (min-width: 960px) {
+  .header h3 {
+    font-size: 1.5rem;
+  }
+  .header p {
+    font-size: 1.5rem;
+  }
 }
 
 .arrow-wrapper {
@@ -896,7 +833,7 @@ main .website-wrapper .development-container .page-preview-images .image-wrapper
 }
 
 main .visit-container {
-  height: 20vh;
+  height: 40vh;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -920,5 +857,9 @@ main .visit-container .visit-text {
       -ms-flex-align: center;
           align-items: center;
   margin: 0;
+}
+
+main .visit-container .next-project {
+  margin-top: 3vh;
 }
 /*# sourceMappingURL=project-page.css.map */

@@ -71,7 +71,12 @@ function animateSectionIntro(section) {
       t1.to($(".hero-section-image img"), { css: { opacity: 0.2 } }, 0.5)
         .to($(section + " .section-text .my-name"), { y: 0 }, 0.5)
         .to($(section + " .section-text p span"), { y: 0 }, 0.5, "+=0.5")
-        .set($(section + " h1"), { css: { overflow: "visible" } }, "+=0.5");
+        .set($(section + " h1"), { css: { overflow: "visible" } }, "+=0.3")
+        .set(
+          $(section + " h1 span"),
+          { css: { transition: "all 0.5s" } },
+          "-=0.3"
+        );
 
       break;
 
@@ -105,7 +110,8 @@ function animateSectionOutro(section) {
           "-=0.4"
         )
         .to($(section + " .section-text p span"), { y: "+=100%" }, 0.3, "-=0.4")
-        .set($(section + " h1"), { css: { overflow: "hidden" } });
+        .set($(section + " h1"), { css: { overflow: "hidden" } })
+        .set($(section + " h1 span"), { css: { transition: "none" } });
 
       break;
 

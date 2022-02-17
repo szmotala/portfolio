@@ -1364,13 +1364,35 @@ main .contact .section-wrapper .section-main-content-2 .section-text-content {
   margin: 0;
 }
 
+main .contact .section-wrapper .section-main-content-2 .section-text-content h2 {
+  font-size: 5vw;
+}
+
+@media (min-width: 720px) {
+  main .contact .section-wrapper .section-main-content-2 .section-text-content h2 {
+    font-size: 4vh;
+  }
+}
+
+@media (min-width: 1600px) {
+  main .contact .section-wrapper .section-main-content-2 .section-text-content h2 {
+    font-size: 3rem;
+  }
+}
+
 main .contact .section-wrapper .section-main-content-2 .section-text-content p {
   font-size: 4vw;
 }
 
+@media (min-width: 720px) {
+  main .contact .section-wrapper .section-main-content-2 .section-text-content p {
+    font-size: 2vw;
+  }
+}
+
 @media (min-width: 960px) {
   main .contact .section-wrapper .section-main-content-2 .section-text-content p {
-    font-size: 1.5rem;
+    font-size: Min(4vw, 1.5rem);
   }
 }
 
@@ -1398,6 +1420,12 @@ main .contact .section-wrapper .section-main-content-2 .section-text-content .ma
   display: inline-block;
   -webkit-transform: translateY(100%);
           transform: translateY(100%);
+}
+
+@media (min-width: 720px) {
+  main .contact .section-wrapper .section-main-content-2 .section-text-content .mail-content a {
+    font-size: 2vw;
+  }
 }
 
 @media (min-width: 960px) {
@@ -1459,7 +1487,7 @@ main .contact .section-wrapper .section-main-content-2 .section-text-content .so
 }
 
 main .contact .section-wrapper .section-main-content-2 .section-text-content .social-media .social-media-links a img {
-  width: 40px;
+  width: 30px;
 }
 
 @media (min-width: 960px) {
@@ -1548,5 +1576,28 @@ main .contact .section-wrapper .section-main-content-2 .section-text-content .so
     -webkit-transform: translateY(0);
             transform: translateY(0);
   }
+}
+
+ul.transition {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  z-index: 1500;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  margin: 0;
+  pointer-events: none;
+}
+
+ul.transition li {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  background: white;
+  width: 20%;
+  -webkit-transform-origin: "bottom";
+          transform-origin: "bottom";
 }
 /*# sourceMappingURL=index.css.map */
