@@ -402,6 +402,7 @@ body.landing-page {
   height: 2rem;
   top: 1rem;
   left: 1rem;
+  z-index: 1500;
 }
 
 @media (min-width: 480px) {
