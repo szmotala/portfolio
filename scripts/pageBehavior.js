@@ -134,28 +134,25 @@ function changeHashResult() {
 //Set window scroll position
 function refreshWindowPostion() {
   animateSectionOutro(lastHash);
+  setTimeout(function () {
+    changeNavItemState();
 
-  changeNavItemState();
+    newHash = window.location.hash;
+    $("section").each(function () {
+      $(this).removeClass("active");
+    });
 
-  newHash = window.location.hash;
-  $("section").each(function () {
-    $(this).removeClass("active");
-  });
+    currentPosition = $(newHash).offset().top;
 
-  currentPosition = $(newHash).offset().top;
-
-  animateSectionIntro(newHash);
-  $("html, body").animate(
-    {
-      scrollTop: currentPosition,
-    },
-    500,
-    function () {
-      $(newHash).addClass("active");
-    }
-  );
-  lastHash = newHash;
-  displayHeader();
+    animateSectionIntro(newHash);
+    $("html, body").animate(
+      {
+        scrollTop: currentPosition,
+      },
+      500
+    );
+    lastHash = newHash;
+  }, 200);
 }
 
 //Set navbar element active according to current section displayed
@@ -169,20 +166,6 @@ function changeNavItemState() {
     $(this).removeClass("active");
     if (j === index) $(this).addClass("active");
   });
-}
-
-function displayHeader() {
-  // if (lastHash !== "#welcome") {
-  //   $(".header").css({
-  //     transform: "translateY(0)",
-  //     opacity: 1,
-  //   });
-  // } else {
-  //   $(".header").css({
-  //     transform: "translateY(0)",
-  //     opacity: 1,
-  //   });
-  // }
 }
 
 function outroSectionAnimation() {

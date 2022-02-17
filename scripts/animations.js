@@ -1,11 +1,18 @@
-function loadStartAnimation() {
-  $(".slide-in_img").animate({ opacity: "1" }, 800, function () {
-    $(".slide-in_text h1 span").css({ transform: "translateY(0)" });
-  });
+let slider_t1 = new TimelineMax();
+let text_t1 = new TimelineMax();
 
-  setTimeout(() => {
-    $(".slide-in").css({ transform: "translateY(-100%)" });
-  }, 1700);
+function loadStartAnimation() {
+  slider_t1
+    .from($(".slide-in_img"), 0.6, { css: { opacity: 0 } })
+    .to(
+      $(".slide-in_text h1 span"),
+      0.5,
+      {
+        y: "-=100%",
+      },
+      "-=0.5"
+    )
+    .to($(".slide-in"), 0.2, { y: "-=100%" }, "+=0.5");
 }
 
 function moveHead(duration, event) {
@@ -57,27 +64,68 @@ function moveText(text) {
 }
 
 function animateSectionIntro(section) {
+  let t1 = new TimelineMax();
+
   switch (section) {
     case "#welcome":
-      setTimeout(function () {
-        $(section + " h1").css({
-          overflow: "visible",
-        });
-      }, 1000);
+      t1.to($(".hero-section-image img"), { css: { opacity: 0.2 } }, 0.5)
+        .to($(section + " .section-text .my-name"), { y: 0 }, 0.5)
+        .to($(section + " .section-text p span"), { y: 0 }, 0.5, "+=0.5")
+        .set($(section + " h1"), { css: { overflow: "visible" } }, "+=0.5");
+
       break;
+
     default:
+      t1.to($(section + " .section-image-content"), { opacity: 1, x: 0 }, 0.5)
+        .to($(section + " .section-title span"), { y: 0 }, 0.5)
+        .to($(section + " .main-cta-wrapper"), { y: 0 }, 0.5, "-=0.3")
+        .set($(section + " .button-content"), {
+          css: { overflow: "visible" },
+        })
+        .fromTo($(".social-media-links"), { scale: 0 }, { scale: 1 }, 0.5);
+
+      setTimeout(function () {
+        $(section + " .section__decoration").addClass("active");
+      }, 500);
+
       break;
   }
 }
 
 function animateSectionOutro(section) {
+  let t1 = new TimelineMax();
+
   switch (section) {
     case "#welcome":
-      $(section + " h1").css({
-        overflow: "hidden",
-      });
+      t1.to($(".hero-section-image img"), { css: { opacity: 0 } }, 0.4)
+        .to(
+          $(section + " .section-text .my-name"),
+          { y: "+=100%" },
+          0.3,
+          "-=0.4"
+        )
+        .to($(section + " .section-text p span"), { y: "+=100%" }, 0.3, "-=0.4")
+        .set($(section + " h1"), { css: { overflow: "hidden" } });
+
       break;
+
     default:
+      t1.to(
+        $(section + " .section-image-content"),
+        { opacity: 0, x: "-=100%" },
+        0.5
+      )
+        .to($(section + " .section-title span"), { y: "+=100%" }, 0.5)
+        .to($(section + " .main-cta-wrapper"), { y: "+=100%" }, 0.5, "-=0.3")
+        .set($(section + " .button-content"), {
+          css: { "overflow-y": "hidden" },
+        })
+        .to($(".social-media-links"), { scale: 0 }, 0.5, "-=2");
+
+      setTimeout(function () {
+        $(section + " .section__decoration").removeClass("active");
+      }, 500);
+
       break;
   }
 }

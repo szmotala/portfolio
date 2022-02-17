@@ -14,14 +14,15 @@
     />
     <title>SM | Portfolio</title>
     <link rel="stylesheet" href="styles/index.css" />
-    <link rel="stylesheet" href="styles/active_section.css" />
+    <!-- <link rel="stylesheet" href="styles/active_section.css" /> -->
 
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
-    <script src="scripts/animations.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="scripts/animations.js"></script>
     <script src="scripts/main.js" defer></script>
     <script src="scripts/pageBehavior.js" defer></script>
   </head>
@@ -167,7 +168,7 @@
       <section id="blog-site" class="work other-section section">
         <div class="section-wrapper">
           <div class="section-main-content-2">
-            <div class="section-image-content">
+            <div id="blog-site-image" class="section-image-content">
               <a
                 href="https://karo-blog-app.web.app"
                 target="_blank"
@@ -197,13 +198,15 @@
                   <span> build in Angular and Firebase </span>
                 </p>
               </div>
-              <div
-                class="main-cta-wrapper button-wrapper"
-                onclick="goToSubpage(1)"
-              >
-                <button class="text-primary" onclick="goToSubpage(1)">
-                  read more
-                </button>
+              <div class="button-content">
+                <div
+                  class="main-cta-wrapper button-wrapper"
+                  onclick="goToSubpage(1)"
+                >
+                  <button class="text-primary" onclick="goToSubpage(1)">
+                    read more
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -254,13 +257,15 @@
                   <span> static website / HTML JS CSS </span>
                 </p>
               </div>
-              <div
-                class="main-cta-wrapper button-wrapper"
-                onclick="goToSubpage(2)"
-              >
-                <button class="text-primary" onclick="goToSubpage(2)">
-                  read more
-                </button>
+              <div class="button-content">
+                <div
+                  class="main-cta-wrapper button-wrapper"
+                  onclick="goToSubpage(2)"
+                >
+                  <button class="text-primary" onclick="goToSubpage(2)">
+                    read more
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -299,13 +304,15 @@
                   <span> who am I? </span>
                 </p>
               </div>
-              <div
-                class="main-cta-wrapper button-wrapper"
-                onclick="goToSubpage(3)"
-              >
-                <button class="text-primary" onclick="goToSubpage(3)">
-                  get to know me
-                </button>
+              <div class="button-content">
+                <div
+                  class="main-cta-wrapper button-wrapper"
+                  onclick="goToSubpage(3)"
+                >
+                  <button class="text-primary" onclick="goToSubpage(3)">
+                    get to know me
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -346,12 +353,15 @@
                   <a
                     href="mailto:szymon.motala95@gmail.com"
                     class="text-secondary"
-                    >szymon.motala95@gmail.com</a
                   >
+                    <span> szymon.motala95@gmail.com </span>
+                  </a>
                 </div>
 
                 <div class="social-media">
-                  <p class="text-primary">or find me in social media</p>
+                  <p class="text-primary">
+                    <span> or find me in social media </span>
+                  </p>
                   <div class="social-media-links">
                     <a
                       href="https://linkedin.com/in/sz-motała"

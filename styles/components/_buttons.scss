@@ -1,3 +1,17 @@
+.button-content {
+  width: 100%;
+  height: max-content;
+  overflow: hidden;
+
+  display: grid;
+  justify-content: center;
+  align-items: center;
+
+  @include lg {
+    justify-content: left;
+  }
+}
+
 .main-cta-wrapper {
   height: max-content;
   width: max-content;

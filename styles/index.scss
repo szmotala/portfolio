@@ -183,7 +183,7 @@ main {
           overflow-y: hidden;
 
           span {
-            transition: all 0.5s;
+            display: inline-block;
 
             &.my-name {
               transform: translateY(100%);
@@ -197,7 +197,6 @@ main {
 
           span {
             display: inline-block;
-            transition: all 0.5s 0.2s;
             transform: translateY(100%);
           }
         }
@@ -207,7 +206,6 @@ main {
         position: relative;
 
         img {
-          transition: all 0.5s;
           opacity: 0;
           width: 80vw;
           height: auto;
@@ -259,6 +257,24 @@ main {
           bottom: 0;
         }
 
+        &.active {
+          .number-container {
+            p {
+              span {
+                transform: translateY(0);
+              }
+            }
+          }
+
+          &::after {
+            height: 40vh;
+          }
+
+          &::before {
+            width: 35vw;
+          }
+        }
+
         .number-container {
           display: flex;
           flex-direction: column;
@@ -276,13 +292,14 @@ main {
 
             span {
               display: inline-block;
+              transition: all 0.5s;
               transform: translateY(100%);
-              transition: all 1s 0.5s;
             }
           }
 
           p.number {
             font-size: $font-size-md;
+            transition: all 0.5s;
             overflow: hidden;
 
             @include lg {
@@ -318,10 +335,10 @@ main {
           grid-row: 1;
           justify-self: center;
           position: relative;
-          transition: all 1s;
           overflow: hidden;
           cursor: pointer;
-          transform: translate(-2vw, 2vh);
+          transform: translateX(-100%);
+          opacity: 0;
 
           display: flex;
           justify-content: center;
@@ -359,8 +376,7 @@ main {
               object-position: center;
               width: 100%;
               max-height: 35vh;
-              opacity: 0;
-              transition: transform 2s opacity 1s;
+              transition: opacity 1s;
               margin: 0;
 
               @include sm {
@@ -400,6 +416,17 @@ main {
 
             @include lg {
               display: grid;
+
+              &:hover {
+                &::after {
+                  transform: rotate(-20deg) translate(100vw, -50%);
+                }
+                opacity: 1;
+                h3 {
+                  transform: translateY(0);
+                  opacity: 1;
+                }
+              }
             }
 
             cursor: pointer;
@@ -430,9 +457,11 @@ main {
             }
           }
 
-          &:hover {
-            img {
-              opacity: 0.1;
+          @include lg {
+            &:hover {
+              img {
+                opacity: 0.1;
+              }
             }
           }
         }
@@ -448,17 +477,33 @@ main {
             h2 {
               letter-spacing: Min(2px, 0.1vw);
               width: 100%;
+              overflow-y: hidden;
+
+              span {
+                display: inline-block;
+                transform: translateY(100%);
+              }
             }
 
             p {
+              overflow-y: hidden;
               letter-spacing: Min(2px, 0.1vw);
               width: 100%;
+
+              span {
+                display: inline-block;
+                transform: translateY((100%));
+              }
             }
           }
         }
 
-        .button-wrapper {
-          margin-left: 0;
+        .main-cta-wrapper {
+          transform: translateY(100%);
+
+          &.button-wrapper {
+            margin-left: 0;
+          }
         }
       }
     }
@@ -535,6 +580,13 @@ main {
               font-weight: $bold;
               text-decoration: none;
               font-size: 4.5vw;
+              overflow: hidden;
+              display: inline-block;
+
+              span {
+                display: inline-block;
+                transform: translateY(100%);
+              }
 
               @include sm {
               }
@@ -579,6 +631,10 @@ main {
 
                   @include lg {
                     width: 60px;
+
+                    &:hover {
+                      transform: scale(1.1);
+                    }
                   }
                 }
 
