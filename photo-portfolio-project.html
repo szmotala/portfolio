@@ -6,11 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SM | Blog webapp project</title>
     <link rel="stylesheet" href="styles/project-page.css" />
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-    ></script>
   </head>
   <body class="bg-primary-dark">
     <aside class="menu">
@@ -164,5 +159,12 @@
         </div>
       </div>
     </main>
+
+    <script>
+      function closeMenu() {
+        $(".header").toggleClass("active");
+        $(".menu").toggleClass("active");
+      }
+    </script>
   </body>
 </html>
