@@ -11,30 +11,17 @@
 @import "components/header";
 @import "components/subpage";
 @import "components/buttons";
+@import "components/menu";
 
-body .header {
+header {
   transition: all 0.5s;
-  position: absolute;
-  height: 10vh;
-  top: 0;
-  padding: 0 10%;
-
-  @include lg {
-    h3 {
-      font-size: $font-size-md;
-    }
-    p {
-      font-size: $font-size-md;
-    }
-  }
 }
-
 .arrow-wrapper {
   position: fixed;
   width: 2rem;
   height: 2rem;
-  top: 1rem;
-  left: 1rem;
+  left: 4vw;
+  top: 4vh;
   z-index: 1500;
 
   @include sm {

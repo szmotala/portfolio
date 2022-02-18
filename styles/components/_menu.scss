@@ -1,0 +1,64 @@
+.menu {
+  position: fixed;
+  z-index: 999;
+  right: 4vw;
+  top: 4vh;
+
+  .menu-btn-container {
+    width: 40px;
+    height: 30px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    .menu-btn {
+      width: 40px;
+      height: 4px;
+      background-color: $font-color;
+      border-radius: 36px;
+      transition: transform 0.5s, width 1s;
+
+      &::after,
+      &::before {
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 4px;
+        background-color: $font-color;
+        border-radius: 36px;
+        display: inline-block;
+        transition: transform 0.5s, width 1s;
+        transform-origin: 0 50%;
+      }
+
+      &::after {
+        transform: translateY(-13px);
+      }
+
+      &::before {
+        transform: translateY(13px);
+      }
+    }
+  }
+
+  &.active {
+    .menu-btn-container {
+      .menu-btn {
+        &::before {
+          border-radius: 0 36px 36px 0;
+          width: 20px;
+          transform: translateY(-1px) rotate(45deg);
+        }
+        &::after {
+          border-radius: 0 36px 36px 0;
+          width: 20px;
+          transform: translateY(1px) rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  @include md {
+    display: none;
+  }
+}

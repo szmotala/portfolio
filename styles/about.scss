@@ -12,26 +12,18 @@
 @import "components/header";
 @import "components/buttons";
 @import "components/subpage";
-body {
-  // background-image: linear-gradient(
-  //   115.44deg,
-  //   #1572b6 -11.05%,
-  //   #000000 34.42%,
-  //   #333333 82.91%,
-  //   #ff7a00 108.24%
-  // );
-}
+@import "components/menu";
+
 header {
   transition: all 0.5s;
-  position: absolute;
 }
 
 .arrow-wrapper {
   position: fixed;
   width: 2rem;
   height: 2rem;
-  top: 1rem;
-  left: 1rem;
+  left: 4vw;
+  top: 4vh;
   z-index: 999;
 
   @include sm {

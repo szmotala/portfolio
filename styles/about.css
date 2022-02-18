@@ -577,18 +577,94 @@ body.landing-page {
   }
 }
 
+.menu {
+  position: fixed;
+  z-index: 999;
+  right: 4vw;
+  top: 4vh;
+}
+
+.menu .menu-btn-container {
+  width: 40px;
+  height: 30px;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu .menu-btn-container .menu-btn {
+  width: 40px;
+  height: 4px;
+  background-color: #ffffff;
+  border-radius: 36px;
+  -webkit-transition: width 1s, -webkit-transform 0.5s;
+  transition: width 1s, -webkit-transform 0.5s;
+  transition: transform 0.5s, width 1s;
+  transition: transform 0.5s, width 1s, -webkit-transform 0.5s;
+}
+
+.menu .menu-btn-container .menu-btn::after, .menu .menu-btn-container .menu-btn::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 4px;
+  background-color: #ffffff;
+  border-radius: 36px;
+  display: inline-block;
+  -webkit-transition: width 1s, -webkit-transform 0.5s;
+  transition: width 1s, -webkit-transform 0.5s;
+  transition: transform 0.5s, width 1s;
+  transition: transform 0.5s, width 1s, -webkit-transform 0.5s;
+  -webkit-transform-origin: 0 50%;
+          transform-origin: 0 50%;
+}
+
+.menu .menu-btn-container .menu-btn::after {
+  -webkit-transform: translateY(-13px);
+          transform: translateY(-13px);
+}
+
+.menu .menu-btn-container .menu-btn::before {
+  -webkit-transform: translateY(13px);
+          transform: translateY(13px);
+}
+
+.menu.active .menu-btn-container .menu-btn::before {
+  border-radius: 0 36px 36px 0;
+  width: 20px;
+  -webkit-transform: translateY(-1px) rotate(45deg);
+          transform: translateY(-1px) rotate(45deg);
+}
+
+.menu.active .menu-btn-container .menu-btn::after {
+  border-radius: 0 36px 36px 0;
+  width: 20px;
+  -webkit-transform: translateY(1px) rotate(-45deg);
+          transform: translateY(1px) rotate(-45deg);
+}
+
+@media (min-width: 720px) {
+  .menu {
+    display: none;
+  }
+}
+
 header {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-  position: absolute;
 }
 
 .arrow-wrapper {
   position: fixed;
   width: 2rem;
   height: 2rem;
-  top: 1rem;
-  left: 1rem;
+  left: 4vw;
+  top: 4vh;
   z-index: 999;
 }
 
