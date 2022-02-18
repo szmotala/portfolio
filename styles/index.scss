@@ -542,11 +542,11 @@ main {
               }
 
               @include lg {
-                font-size: 2rem;
+                font-size: Min(2rem, 2vw);
               }
 
               @include xl {
-                font-size: 2.2rem;
+                font-size: Min(2.2rem, 2vw);
               }
             }
           }
