@@ -12,7 +12,7 @@
 @import "components/subpage";
 @import "components/buttons";
 
-.header {
+body .header {
   transition: all 0.5s;
   position: absolute;
   height: 10vh;
@@ -196,6 +196,7 @@ main {
       .concept-text-content {
         @include lg {
           margin-bottom: 0;
+          margin-right: 3vw;
         }
       }
 
@@ -229,9 +230,6 @@ main {
             overflow: hidden;
             position: relative;
             right: 0;
-          }
-
-          @include breakpoint(1200px) {
           }
 
           &::after {

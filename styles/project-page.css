@@ -378,6 +378,10 @@ body.landing-page {
   background-color: rgba(255, 255, 255, 0.4);
 }
 
+body {
+  background-color: #333;
+}
+
 .header {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
@@ -624,6 +628,7 @@ main .website-wrapper .concept-container {
 @media (min-width: 960px) {
   main .website-wrapper .concept-container .concept-text-content {
     margin-bottom: 0;
+    margin-right: 3vw;
   }
 }
 
