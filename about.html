@@ -8,9 +8,50 @@
     <link rel="stylesheet" href="styles/about.css" />
   </head>
   <body class="landing-page bg-primary-dark">
-    <header class="header">
+    <aside class="menu">
+      <div class="menu-btn-container">
+        <div class="menu-btn"></div>
+      </div>
+    </aside>
+
+    <header class="header bg-primary-dark">
       <h3 class="text-primary">szymon motała</h3>
-      <p class="text-secondary">junior frontend developer</p>
+      <nav>
+        <ul>
+          <li>
+            <a
+              class="text-primary"
+              href="/portfolio/#welcome"
+              onclick="closeMenu()"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              class="text-primary"
+              href="/portfolio/#blog-site"
+              onclick="closeMenu()"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a
+              class="text-primary"
+              href="/portfolio/#about"
+              onclick="closeMenu()"
+              >About
+            </a>
+          </li>
+          <li>
+            <a
+              class="text-primary"
+              href="/portfolio/#contact"
+              onclick="closeMenu()"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </nav>
     </header>
 
     <aside class="arrow-wrapper">
