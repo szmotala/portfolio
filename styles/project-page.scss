@@ -15,7 +15,13 @@
 
 header {
   transition: all 0.5s;
+  top: 0;
+
+  @include md {
+    transition: none;
+  }
 }
+
 .arrow-wrapper {
   position: fixed;
   width: 2rem;
@@ -24,7 +30,7 @@ header {
   top: 4vh;
   z-index: 1500;
 
-  @include sm {
+  @include md {
     top: 12vh;
     left: 5%;
   }

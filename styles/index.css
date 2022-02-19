@@ -792,10 +792,16 @@ body {
 }
 
 header {
-  -webkit-transition: -webkit-transform 0.5s;
-  transition: -webkit-transform 0.5s;
-  transition: transform 0.5s;
-  transition: transform 0.5s, -webkit-transform 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  top: 0;
+}
+
+@media (min-width: 720px) {
+  header {
+    -webkit-transition: none;
+    transition: none;
+  }
 }
 
 .navigation {
@@ -1430,13 +1436,13 @@ main .contact .section-wrapper .section-main-content-2 .section-text-content .ma
 
 @media (min-width: 960px) {
   main .contact .section-wrapper .section-main-content-2 .section-text-content .mail-content a {
-    font-size: 2rem;
+    font-size: Min(2rem, 2vw);
   }
 }
 
 @media (min-width: 1600px) {
   main .contact .section-wrapper .section-main-content-2 .section-text-content .mail-content a {
-    font-size: 2.2rem;
+    font-size: Min(2.2rem, 2vw);
   }
 }
 

@@ -31,7 +31,12 @@ body {
 }
 
 header {
-  transition: transform 0.5s;
+  transition: all 0.5s;
+  top: 0;
+
+  @include md {
+    transition: none;
+  }
 }
 
 .navigation {
